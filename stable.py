@@ -3,13 +3,15 @@ import asyncio
 
 client = discord.Client()
 
+bot = commands.Bot(command_prefix='/',description=description)
+  
+startup_extensions = ['cogs.pubg']
 @client.event
 async def on_ready():
   print('Logged in as')
   print(client.user.name)
   print(client.user.id)
   print('------')
-   await client.change_presence(game=discord.Game(name=" /help "))
 @client.event
 async def on_message(message):
   if message.content.startswith('/help'):
@@ -33,4 +35,24 @@ async def on_message(message):
       else:
           await client.send_message(message.channel, msg.content)
 
+  
 client.run('NDM4NjczNDkzNDk2OTU0ODkw.DcIS0g.XQUj1w7FjLE28VeA9XrT2Sq8voA')
+ 
+@bot.event
+ async def on_ready():
+ print('Logged in as: {}'.format(bot.user.name))
+ print('User ID: {}'.format(bot.user.id))
+ await bot.change_presence(game=discord.Game(name='삐빅 에러 !')
+ for server in bot.servers:
+ print ('Bot connected to: {}'.format(server.name))
+ print('------')
+ 
+if __name__ == "__main__":
+for extension in startup_extensions:
+try:
+bot.load_extension(extension)
+print('Loaded {}'.format(extension))
+except Exception as e:
+exc = '{}: {}'.format(type(e).__name__, e)
+print('Failed to load extension {}\n{}'.format(extension, exc))
+bot.run('NDM4NjczNDkzNDk2OTU0ODkw.DcIS0g.XQUj1w7FjLE28VeA9XrT2Sq8voA')
