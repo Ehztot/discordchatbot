@@ -12,17 +12,15 @@ async def on_ready():
    await client.change_presence(game=discord.Game(name=" /help "))
 @client.event
 async def on_message(message):
+  
+    
+## global  
   if message.content.startswith('/help'):
       await client.send_message(message.channel, '안녕하세요 테스트 중입니다. 지금 가능한 명령어 목록입니다.  /help \n/hi \n/echo \n등등?  ')
 
   if message.content.startswith('/hi'):
       await client.send_message(message.channel, '안녕하세요! 새로운 기능을 원하시면 \n소원수리 혹은 Ezhtot에게 보내주세요! ')
-
-  if message.content.startswith('/sex'):
-      await client.send_message(message.channel, '너도 유꾸니?')
-
-  if message.content.startswith('하실?'):
-      await client.send_message(message.channel, '나도! 나도! ')
+      
   elif message.content.startswith('/echo'):
       await client.send_message(message.channel, '말해봐!')
       msg = await client.wait_for_message(timeout=15.0, author=message.author)
@@ -32,5 +30,14 @@ async def on_message(message):
           return
       else:
           await client.send_message(message.channel, msg.content)
+  
+  if message.content.startswith('하실?'):
+      await client.send_message(message.channel, '나도! 나도! ')
+## private 
+  if message.content.startswith('/sex')
+      await client.send_message(message.channel, '너도 유꾸니?')
+
+  if message.content.startswith('/준브로')
+      await client.send_message(message.channel, '군인 아저씨 나라를 지켜줘요!')
 
 client.run('NDM4NjczNDkzNDk2OTU0ODkw.DcIS0g.XQUj1w7FjLE28VeA9XrT2Sq8voA')
