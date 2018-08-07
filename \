@@ -1,0 +1,17 @@
+import discord
+from discord.ext import commands
+import random 
+
+description = ''' 전적을 조회합니다.'''
+
+bot = commands.Bot(command_prefix='/', description= description)
+
+@bot.event
+ async def on ready():
+     print('안녕하세요')
+     print('bot.user.name')
+     print('bot.user.id')
+     print('--------')
+
+
+bot.run('NDc2MjU5NjcxNjU3Njc2ODEw.Dkrccw.jqdXN-dhzaigXsA6mvykRYE5vBI')
