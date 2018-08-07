@@ -30,7 +30,7 @@ regions={
 
 class default:
 	mode='squad-fpp'
-	region='na'
+	region='kr/jp'
 
 class pubg():
 	def __init__(self,bot):
